@@ -174,7 +174,8 @@ class MultilingualInlineAdmin(admin.TabularInline):
         #     if isinstance(self.model._meta.translation_model._meta.get_field_by_name(checkfield)[0], CharField):
         #         kwargs[str('%s_%s__gt' % (checkfield, GLL.language_code))] = ''
         #     return qs.filter(**kwargs)
-        return qs.filter(translations__language_code=GLL.language_code).distinct()
+#        return qs.filter(translations__language_code=GLL.language_code).distinct()
+        return qs
     
     def get_fill_check_field(self):
         if self.fill_check_field is None:
